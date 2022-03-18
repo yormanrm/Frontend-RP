@@ -1,0 +1,35 @@
+<div class="row p-4 rounded-3 shadow mb-4" style="background: rgb(255,255,255);">
+    <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-4 px-4 mb-4">
+        <div class="text-decoration-none text-dark">
+            <h2>Productos Recientes Del Vendedor</h2>
+        </div>
+    </div>
+    <div class="d-flex flex-wrap align-items-center border-bottom pb-4 px-4 mb-4">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6 px-2 mb-3" *ngFor="let product of products | productsbusinessbyDate">
+            <div class="card product-card">
+            
+                <a class="card-img-top d-block overflow-hidden" (click)="goToProduct(product.product_id)" style="cursor: pointer;"><img class="card-img-top" src="http://localhost:3000/{{product.path}}" alt="Product"></a>
+               
+                <div class="card-body py-3">
+                    <h3 class="product-title text-center">{{product.product_name}}</h3>
+                    <div class="">
+                        <div class="product-price text-center d-block"><strong class="label">Precio:   </strong><span>${{product.price}}</span></div>
+                    </div>
+                </div>
+                
+                <div class="text-center btn-vista-container"><a class="btn-vista" (click)="goToProduct(product.product_id)" style="cursor: pointer;"><i class="bi bi-eye align-middle me-1"></i>Vista Rapida</a></div>
+            
+            </div>
+        </div>
+
+        <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="(products | productsbusinessbyDate)?.length === 0">
+            <div class="container-fluid py-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12">
+                        <h1 class="display-6 fw-normal mb-5 text-center">No Disponibles</h1>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

@@ -1,0 +1,137 @@
+<header>
+    <nav class=" bar d-flex justify-content-around align-items-center py-3">
+        
+        <a  class="navbar-brand" routerLink="/">
+            <img src="https://picsum.photos/200/300" alt="" width="60" height="54" class="d-none d-lg-inline me-3 align-middle">
+            <img src="https://picsum.photos/200/300" alt="" width="30" height="24" class="d-inline d-lg-none me-3 align-middle">
+            <p class="d-none d-lg-inline align-middle text-white">Bootstrap</p>
+        </a>
+
+        <div class="widgets">
+            <div *ngIf="logged">
+                <app-user-online class="d-xl-block mt-1" ></app-user-online>
+            </div>
+            <div *ngIf="!logged">
+                <app-user-offline class="d-xl-block mt-1"></app-user-offline>
+            </div>
+        </div>
+
+        <div class="widgets">
+            <app-cart class="d-xl-block ms-5" style="margin-top: 4px;"></app-cart>
+        </div>
+
+        <!--<div class="widgets">
+            <button class="navbar-toggler d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>-->
+
+
+    </nav>
+
+
+    <!--<ul class="yamm nav d-none d-xl-flex justify-content-evenly bar2">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-grid-1x2-fill me-2"></i>Departamentos</a>
+          <ul class="dropdown-menu dropdown-animate animate__animated animate__fadeIn animate__faster p-0 border-0">
+            <div class="yamm-content" style="max-width: 1000px;">
+                <div class="row">
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 mb-3 widget">
+                        <a class="card bg-dark text-white" style="cursor: pointer;">
+                            <img src="https://picsum.photos/200/200" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Categoria</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/viewproducts">Mas Vendidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/viewproducts">Recien Llegados</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/viewproducts">De Temporada</a>
+        </li>
+    </ul>-->
+
+</header>
+
+<app-cartoffcanvas></app-cartoffcanvas>
+<app-login></app-login>

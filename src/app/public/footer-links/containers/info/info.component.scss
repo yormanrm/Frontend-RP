@@ -1,0 +1,53 @@
+.nav-desktop{
+    .nav-item{
+        border: 0.2px solid rgb(228, 228, 228);
+        .nav-link{
+            color: rgb(114, 114, 114);
+            font-size: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .nav-link.active, .nav-pills .show>.nav-link{
+            font-size: 18px;
+            background: rgb(72, 10, 122);
+            color: white;
+            transition: all .2s ease-in-out;
+        }
+    }
+}
+.btn-mobile-menu{
+    border: 0.5px solid rgb(204, 204, 204);
+    margin-bottom: 20px;
+    padding: 5px;
+    
+    i{
+        font-size: 20px;
+    }
+    &:focus {
+        border-color: none;
+        box-shadow: none;
+    }
+}
+.offcanvas{
+    .offcanvas-header{
+        button{
+            &:focus {
+                border-color: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .offcanvas-body{
+        .nav-mobile{
+            .nav-item{
+                .nav-link{
+                    color: rgb(114, 114, 114);
+                }
+                .nav-link.active, .nav-pills .show>.nav-link{
+                    background: rgb(72, 10, 122);
+                    color: white;
+                }
+            }
+        }
+    }
+}

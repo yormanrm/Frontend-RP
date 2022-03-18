@@ -1,0 +1,57 @@
+<section class="animate__animated animate__zoomIn animate__faster container">
+
+    <div class="row d-flex justify-content-center justify-content-xl-between mb-3 mb-lg-5 p-2 p-lg-4">
+
+        <h2 class="display-6">Lista De Servicios</h2>
+        <hr class="mb-4">   
+
+        <div class="row d-flex justify-content-end mb-4">
+            <div class="col-auto">
+                <a class="enlaceAdd" href="#" data-bs-toggle="modal" data-bs-target="#modal-insertservice"><i class="bi bi-plus-circle me-2"></i>Agregar Servicio</a>
+            </div>
+        </div>
+        <ol class="list-group listaProductos pt-4" *ngFor="let service of services | paginateservices:page">
+            <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-1 p-md-3 listaProducto animate__animated animate__fadeIn animate__slow">
+                <a class="ms-4 me-auto descripcionProducto d-flex align-items-center text-decoration-none text-black" [routerLink]="['/viewservice',service.service_id]" style="cursor: pointer;">
+                    <div class="d-none d-md-inline">
+                        <img class="img-fluid img-product img-thumbnail" src="http://localhost:3000/{{service.path}}" alt="Service">
+                    </div>
+                    <div class="d-inline ms-0 ms-md-4">
+                        <strong class="d-block mb-1 productname">{{service.service_name}}</strong>
+                        <small class="d-block productcategory">{{service.category}}</small>
+                    </div>
+                </a>
+              
+                <div class="actionsgroup">
+                    <a class="btn icon-edit d-block d-md-inline" [routerLink]="['/account-vendor/editservics',service.service_id]"><i class="bi bi-pencil-square fs-3"></i></a>
+                    <button type="button" class="btn icon-drop d-block d-md-inline" (click)="deleteService(service.service_id)"><i class="bi bi-trash fs-3"></i></button>
+                </div>
+            </li>
+        </ol>
+        <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="(services | paginateservices:page)?.length === 0">
+            <div class="container-fluid py-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12">
+                        <h1 class="display-6 fw-normal mb-5 text-center">No Hay Mas Elementos Por Mostrar</h1>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-secondary mt-3 btn-lg" type="button" (click)="initPage()">Volver Al Inicio</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="mt-5 row d-flex justify-content-end align-items-center p-0">
+            <div class="col-auto p-0">
+                <button class="btn btn-outline-purple" aria-label="Previous" (click)="prevPage()" *ngIf="page != 0">Anterior</button>
+            </div>
+            <div class="col-auto p-0 ms-3">
+                <button class="btn btn-outline-purple" aria-label="Next" (click)="nextPage()" *ngIf="(services | paginateservices:page)?.length != 0">Siguiente</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<app-modalinsertservics></app-modalinsertservics>

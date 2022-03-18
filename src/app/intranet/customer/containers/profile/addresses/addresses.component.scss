@@ -1,0 +1,78 @@
+form{
+    button{
+        i{
+            font-size: 25px;
+            color: rgba(139, 139, 139, 0.705);
+        }
+        &:focus {
+            border-color: rgb(200, 200, 200);
+            box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+        }
+    }
+}
+
+.list-group{
+    .list-group-item{
+        .icon-save{
+            font-size: 34px;
+        }
+        .info-save{
+            font-size: 20px;
+            small{
+                font-size: 15px;
+            }
+        }
+    }
+}
+.default{
+    background: rgb(177, 17, 252);
+    color: white;
+    .ubicacionsave{
+        .info-save{
+            p{
+                font-weight:bold !important;
+            }
+        }
+    }
+}
+.common{
+    background: none;
+}
+
+.user-label{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.icon-edit{
+    font-size: 20px;
+    color: rgb(210,210,210);
+    transition: color .2s ease-in-out;
+    &:hover{
+        color: rgb(150,150,150);
+    }
+}
+.icon-drop{
+    font-size: 20px;
+    color: rgb(210,210,210);
+    transition: color .2s ease-in-out;
+    &:hover{
+        color: rgb(182, 1, 1);
+    }
+}
+
+@media (max-width: 900px) {
+    .icon-edit{
+        font-size: 18px !important;
+
+    }
+    .icon-drop{
+        font-size: 18px !important;
+    }
+    .info-save{
+        font-size: 16px !important;
+    }
+    .icon-save{
+        font-size: 15px !important;
+    }
+}

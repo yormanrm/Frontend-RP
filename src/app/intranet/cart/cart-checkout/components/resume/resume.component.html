@@ -1,0 +1,148 @@
+<div class="row d-flex justify-content-center justify-content-xl-between p-2 p-lg-4">
+    <!--<form>
+
+        <div class="user-info row">
+
+            <h1>Informacion De Envio</h1>
+
+            <strong>Nombre</strong>
+            <p>{{name + " " + paternal + " " + maternal}}</p>
+            <strong>Direccion De Envio</strong>
+            <p>{{address}}</p>
+            <strong>Email</strong>
+            <p>{{email}}</p>
+            <strong>Telefono 1</strong>
+            <p>{{phone1}}</p>
+            <div *ngIf="phone2?.length != 0">
+                <strong>Telefono 2</strong>
+                <p>{{phone2}}</p>
+            </div>
+        </div>
+
+
+        <div class="products-info row">
+
+            <h1>Carrito</h1>
+
+            <div *ngFor="let product of products">
+                {{product.product_name}}
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-auto">
+                <button matStepperPrevious class="btn btn-back me-4"><i class="bi bi-arrow-left-circle-fill"></i></button>
+            </div>
+            <div class="col-auto">
+                <button matStepperNext type="submit" class="btn btn-outline-purple">Confirmar Informacion</button>
+            </div>
+        </div>
+
+
+    </form> -->
+
+    <div class="card bg-white border-0 px-5">
+        <div class="card-header">
+            <div class="jumbotron mb-1 bg-white ">
+                <h1 class="display-5"><b>Ya Casi Terminamos</b></h1>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row d-flex justify-content-between">
+                <div class="col-md-5">
+                    <div class="card mt-0 border-0 first-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Quien Recibe</h3>
+                            <div class="row">
+                                <div class="col-md-auto ">
+                                    <strong>Nombre</strong>
+                                    <p>{{name + " " + paternal + " " + maternal}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-2 border-0 second-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Informacion De Envio</h3>
+                            <div class="row">
+                                <div class="col-md-auto ">
+                                    <strong>Direccion De Envio</strong>
+                                    <p>{{address}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-2 border-0 second-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Informacion De Contacto</h3>
+                            <div class="row">
+                                <div class="col-md-auto ">
+                                    <strong>Email</strong>
+                                    <p>{{email}}</p>
+                                    <strong>Telefono 1</strong>
+                                    <p>{{phone1}}</p>
+                                    <div *ngIf="phone2?.length != 0">
+                                        <strong>Telefono 2</strong>
+                                        <p>{{phone2}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+
+
+                    <div *ngIf="roleLogged == 'Vendor'">
+                        <div class="card right-card mb-5" *ngFor="let product of cartVendor">
+                            <div class="card-header ">
+                                <div class="row align-middle">
+                                    <a [routerLink]="['/viewproduct', product.product_id]" style="cursor: pointer;" class="text-decoration-none text-black">
+                                        <img class="img-fluid img-product img-thumbnail d-none d-xl-inline" src="https://picsum.photos/200" alt="img-product">
+                                        <h3 class="font-weight d-inline ms-xl-3 ms-0 text-end"><b>{{product.product_name}}</b></h3>
+                                    </a>
+                                </div>
+                                <div class="row mt-2">
+                                    <h6 class="text-muted"><b>Cantidad : {{product.quantity}}</b></h6>
+                                    <h6 class="text-muted"><b>Subtotal : ${{product.total}}</b></h6>
+                                </div>
+                            </div>
+                            <input type="text" id="paypal-orderid" class="d-none" value={{product.order_id}}>
+                        </div>
+                    </div>
+
+                    <div *ngIf="roleLogged == 'Customer'">
+                        <div class="card right-card mb-5" *ngFor="let product of cartCustomer">
+                            <div class="card-header ">
+                                <div class="row align-middle">
+                                    <a [routerLink]="['/viewproduct', product.product_id]" style="cursor: pointer;" class="text-decoration-none text-black">
+                                        <img class="img-fluid img-product img-thumbnail d-none d-xl-inline" src="https://picsum.photos/200" alt="img-product">
+                                        <h3 class="font-weight d-inline ms-xl-3 ms-0 text-end"><b>{{product.product_name}}</b></h3>
+                                    </a>
+                                </div>
+                                <div class="row mt-2">
+                                    <h6 class="text-muted"><b>Cantidad : {{product.quantity}}</b></h6>
+                                    <h6 class="text-muted"><b>Subtotal : ${{product.total}}</b></h6>
+                                </div>
+                            </div>
+                            <input type="text" id="paypal-orderid" class="d-none" value={{product.order_id}}>
+                        </div>
+                    </div>
+
+
+                    <div class="row d-flex border-bottom border-top py-4">
+                        <h2 class="text-center d-inline">Total A Pagar: $<h2 class="d-inline">{{totalpay}}</h2></h2>
+                    </div>
+
+                    <div class="row">
+                        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                        <input type="text" id="paypal-total" class="d-none" value={{totalPaypal}}>
+                        <button matStepperNext class="d-none" id="btn-step">Compra Confirmada</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

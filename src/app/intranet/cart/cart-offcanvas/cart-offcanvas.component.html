@@ -1,0 +1,63 @@
+<div class="offcanvas offcanvas-end align-content-center" id="cart-offcanvas" aria-labelledby="cartOffcanvasLabel" tabindex="-1">
+    <div class="offcanvas-header border border-1">
+        <h5 id="cartOffcanvasLabel" class="mx-auto">Tu Carrito <span class="badge rounded-pill fw-bold">{{allitems}}</span></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" *ngIf="isLogged && allitems != 0">
+        <div class="cart-product-wrapper">
+
+
+            <div  *ngIf="roleLogged === 'Vendor'">
+                <div class="cart-product p-4" *ngFor="let cartitem of cartItemsVendor">
+                    <div class="d-flex align-items-center">
+                        <a  data-bs-dismiss="offcanvas">
+                            <img src="http://localhost:3000/{{cartitem.path}}" alt="" class="rounded img-fluid cart-product-image">
+                        </a>
+                        <div class="w-100">
+                            <button class="btn-close close text-sm me-2 rounded-circle border border-2 p-2" type="button" (click)="deleteCartItem(cartitem.cartitem_id)" aria-label="Close"></button>
+                            <div class="ps-3">
+                                <a class="cart-product-link"  data-bs-dismiss="offcanvas">{{cartitem.product_name}}</a>
+                                <small class="text-muted d-block price-info">Cantidad: {{cartitem.quantity}}</small>
+                                <small class="text-muted d-block price-info">Precio: {{cartitem.price}}</small>
+                                <small class="text-muted d-block price-info-subtotal">Subtotal ${{cartitem.total}}</small>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="roleLogged === 'Customer'">
+                <div class="cart-product p-4" *ngFor="let cartitem of cartItemsCustomer">
+                    <div class="d-flex align-items-center">
+                        <a  data-bs-dismiss="offcanvas">
+                            <img src="http://localhost:3000/{{cartitem.path}}" alt="" class="rounded img-fluid cart-product-image">
+                        </a>
+                        <div class="w-100">
+                            <button class="btn-close close text-sm me-2 rounded-circle border border-2 p-2" type="button" (click)="deleteCartItem(cartitem.cartitem_id)" aria-label="Close"></button>
+                            <div class="ps-3">
+                                <a class="cart-product-link"  data-bs-dismiss="offcanvas">{{cartitem.product_name}}</a>
+                                <small class="text-muted d-block price-info">Cantidad: {{cartitem.quantity}}</small>
+                                <small class="text-muted d-block price-info">Precio: {{cartitem.price}}</small>
+                                <small class="text-muted d-block price-info-subtotal">Subtotal ${{cartitem.total}}</small>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+        </div>
+        <div class="cart-total">
+            <span class="text-uppercase text-muted">Total</span>
+            <strong >$ {{totalpay}}</strong>
+        </div>
+        <div class="paygroup row p-5">
+            <div class="col-12">
+                <button class="btn btn-purple d-block w-100" data-bs-dismiss="offcanvas" (click)="goToCheckout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>

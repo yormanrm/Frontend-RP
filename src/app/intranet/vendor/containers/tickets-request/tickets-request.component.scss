@@ -1,0 +1,15 @@
+.icon-edit{
+    font-size: 20px;
+    color: rgb(210,210,210);
+    transition: color .2s ease-in-out;
+    &:hover{
+        color: rgb(150,150,150);
+    }
+}
+
+@media (max-width: 900px) {
+    .icon-edit{
+        font-size: 15px !important;
+
+    }
+}

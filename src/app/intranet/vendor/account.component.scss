@@ -1,0 +1,53 @@
+.barra-lateral{
+    min-height: 100vh;
+    .nav-item{
+        .nav-link{
+            color: rgb(80, 80, 80);
+        }
+    }
+    .nav-item .active{
+        background: rgb(121, 20, 204);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .barra-lateral{
+        min-width: auto !important;
+        min-height: 50vh;
+        .logo{
+            display: none !important;
+        }
+        .menu{
+            a{
+                span{
+                    display: none !important;
+                }
+                i{
+                    margin: 0 !important; 
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1518px) {
+    .barra-lateral{
+        max-width: 300px !important;
+        min-height: 50vh;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .barra-lateral{
+        min-height: auto !important;
+        .menu{
+            a{
+                display: inline-block !important;
+                border: none !important;
+            }
+        }
+    }
+}
+

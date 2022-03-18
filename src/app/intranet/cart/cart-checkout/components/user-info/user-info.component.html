@@ -1,0 +1,45 @@
+<form [formGroup]="shipmentForm" (ngSubmit)="shipmentDataSend()" class="my-4">
+
+    <div class="row d-flex justify-content-center align-items-center mb-3">
+        <div  class="col-12 align-self-center">
+            <div class="mb-3 mt-4 mt-lg-0 row d-flex justify-content-center align-items-center">
+                <label for="user-name" class="user-label">Nombre:</label>
+                <input type="text" class="form-control user-campo text-capitalize" id="user-name" [ngModel]="currentUser?.names" name="name" formControlName="name">
+                <label for="user-paternal" class="user-label">Apellido Paterno:</label>
+                <input type="text" class="form-control user-campo text-capitalize" id="user-paternal" [ngModel]="currentUser?.paternal" name="paternal" formControlName="paternal">
+                <label for="user-maternal" class="user-label">Apellido Materno:</label>
+                <input type="text" class="form-control user-campo text-capitalize" id="user-maternal" [ngModel]="currentUser?.maternal" name="maternal" formControlName="maternal">
+            </div>
+            <div class="mb-3 mt-4 mt-lg-0 row d-flex justify-content-center align-items-center">
+                <label for="user-email" class="user-label">Email:</label>
+                <input type="email" class="form-control user-campo" id="user-email" [ngModel]="currentUser?.email" name="email" formControlName="email">
+            </div>
+            <div class="mb-3 mt-4 mt-lg-0 row d-flex justify-content-center align-items-center">
+                <label for="user-phone" class="user-label">Telefono 1:</label>
+                <input type="text" class="form-control user-campo" id="user-phone1" [ngModel]="currentUser?.phone" name="phone1" formControlName="phone1">
+            </div>
+            <div class="mb-3 mt-4 mt-lg-0 row d-flex justify-content-center align-items-center">
+                <label for="user-phone" class="user-label">Telefono 2 (Opcional):</label>
+                <input type="text" class="form-control user-campo" id="user-phone2" name="phone2" formControlName="phone2">
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mb-3">
+        <label id="material-radio-group-label" class="user-label">Seleccione La Direccion De Envio</label>
+        <mat-radio-group aria-labelledby="material-radio-group-label" class="material-radio-group" name="address" formControlName="address">
+            <mat-radio-button class="material-radio-button" *ngFor="let a of addresses" [value]="a.address" [checked]="a.default_address === '1'">
+            {{a.address}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-auto">
+            <button matStepperPrevious class="btn btn-back me-4"><i class="bi bi-arrow-left-circle-fill"></i></button>
+        </div>
+        <div class="col-auto">
+            <button matStepperNext type="submit" class="btn btn-outline-purple">Confirmar Informacion</button>
+        </div>
+    </div>
+</form>

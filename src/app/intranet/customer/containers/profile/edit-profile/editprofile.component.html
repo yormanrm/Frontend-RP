@@ -1,0 +1,37 @@
+<form class="py-5 px-0 px-sm-1 px-md-2 px-lg-3 px-xl-5 animate__animated animate__fadeIn" [formGroup]="customerInfoForm" (ngSubmit)="updateCustomer()">
+
+    <div class="mb-3">
+        <label class="form-label user-label" for="nameUser">Nombre</label>
+        <input appBlockCopyPaste class="form-control" type="text" id="nameCustomer" name="names" [ngModel]="currentCustomer?.names" formControlName="names" style="text-transform: capitalize;">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label user-label" for="paternalCustomer">Apellido Paterno</label>
+        <input appBlockCopyPaste class="form-control" type="text" id="paternalCustomer" name="paternal" [ngModel]="currentCustomer?.paternal" formControlName="paternal" style="text-transform: capitalize;">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label user-label" for="maternalCustomer">Apellido Materno</label>
+        <input appBlockCopyPaste class="form-control" type="text" id="maternalCustomer" name="maternal" [ngModel]="currentCustomer?.maternal" formControlName="maternal" style="text-transform: capitalize;">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label user-label" for="phoneCustomer">Telefono Celular</label>
+        <input appBlockCopyPaste class="form-control" type="text" id="phoneCustomer" name="phone" [ngModel]="currentCustomer?.phone" formControlName="phone">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label user-label">Genero</label>
+        <select name="gender" class="form-control" [ngModel]="currentCustomer?.gender" formControlName="gender">
+            <option value="-">No Binario</option>
+            <option value="F">Femenino</option>
+            <option value="M">Masculino</option>
+        </select>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-8">
+            <button type="submit" class="btn btn-purple d-block mx-auto">Actualizar</button>
+        </div>
+    </div>
+</form>

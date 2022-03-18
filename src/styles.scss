@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #ebebeb;
+}
+
+//! Mat-tabs, correcion a las label. Por defecto vienen en blanco y no se muestran en el tema Purple-Green
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
+//* Clases globales
+.p-custom {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.btn-purple {
+  background: rgb(121, 20, 204);
+  color: rgb(255, 255, 255);
+  &:hover {
+    background: rgb(159, 17, 224);
+    color: rgb(255, 255, 255);
+  }
+  &:focus {
+    border-color: rgb(200, 200, 200);
+    box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.btn-outline-purple {
+  color: rgb(143, 59, 211);
+  background-color: #ffffff;
+  border-color: rgb(121, 20, 204);
+  border-radius: 0.25rem;
+}
+.btn-outline-purple:hover,
+.btn-outline-purple:active,
+.btn-outline-purple:focus,
+.btn-outline-purple.active {
+  background: rgb(121, 20, 204);
+  color: rgb(255, 255, 255);
+  //border-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+}
+
+.form-control,
+select,
+.form-check-input,
+button {
+  &:focus {
+    border-color: rgb(200, 200, 200);
+    box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+  }
+  &:checked {
+    border: none;
+    background-color: rgb(103, 22, 168);
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+//Media Querys Globales
+@media (min-width: 992px) {
+  //apartir de una pantalla LG
+  .p-custom {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

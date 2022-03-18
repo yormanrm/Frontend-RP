@@ -1,0 +1,17 @@
+<mat-tab-group dynamicHeight mat-align-tabs="center" class="animate__animated animate__zoomIn animate__faster">
+    <mat-tab label="Editar Perfil">
+        <ng-template matTabContent>   
+            <app-editprofile></app-editprofile>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Cambiar Contraseña">
+        <ng-template matTabContent> 
+            <app-editcredentials></app-editcredentials>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Editar Direcciones">
+        <ng-template matTabContent> 
+            <app-addresses></app-addresses>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

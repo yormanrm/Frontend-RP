@@ -1,0 +1,29 @@
+.bodybg-color {
+  background-color: #e9e8e8;
+}
+.contact-container {
+  background: rgb(72, 10, 122);
+  .column-contact {
+    img {
+      filter: invert(100%);
+      max-width: 180px;
+      max-height: 180px;
+    }
+    .list-unstyled {
+      .list-item {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+  .column-form {
+    background: rgb(255, 255, 255);
+    .form-select {
+      &:focus {
+        border-color: rgb(200, 200, 200);
+        box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+      }
+    }
+  }
+}

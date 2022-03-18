@@ -1,0 +1,43 @@
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLogin" aria-hidden="true" #modalLogin>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item justify-content-center">
+                        <a href="#signin-tab" class="nav-link active" data-bs-toggle="tab" role="tab" aria-selected="true">
+                            <i class="d-inline bi bi-door-open me-2 mt-n1"></i>
+                            <p class="d-none d-md-inline">Iniciar Sesion</p>
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <form id="signin-tab" class="tab-pane fade show active px-0 px-sm-1 px-md-2 px-lg-3 px-xl-5" name="form" (ngSubmit)="login()" #f="ngForm">
+
+                    <div class="mb-3">
+                        <label class="form-label" for="emailUser">Correo Electronico</label>
+                        <input appBlockCopyPaste class="form-control" type="text" id="emailLogin" placeholder="email@ejemplo.com" name="email" #email="ngModel" [(ngModel)]="form.email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="passwdUser">Contraseña</label>
+                        <input appBlockCopyPaste class="form-control" type="password" id="passwdLogin" name="passwd" #passwd="ngModel" [(ngModel)]="form.passwd" required>
+                    </div>
+
+                    <div class="mb-3 d-flex justify-content-between">
+                        <div>
+                            <a class="fs-6 text-decoration-none d-block" href="#" style="color: royalblue; font-weight: 500;">Olvidaste Tu Contraseña?</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary d-block w-75 mx-auto mb-3" data-bs-dismiss="modal" data-bs-target="#modalLogin" [disabled]="!f.valid">Iniciar Sesion</button>
+
+                </form>
+                <div class=" px-0 px-sm-1 px-md-2 px-lg-3 px-xl-5">
+                    <button [routerLink]="['register']" data-bs-dismiss="modal" class="btn btn-purple d-block w-75 mx-auto mb-3">Registrate</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

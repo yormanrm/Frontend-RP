@@ -1,0 +1,53 @@
+<mat-tab-group dynamicHeight mat-align-tabs="center" class="animate__animated animate__zoomIn animate__faster">
+    <mat-tab label="Solicitudes Regulares">
+        <ng-template matTabContent>   
+            <ol class="list-group" *ngFor="let ticketc of ticketsCustomer">
+                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Servicio: {{ticketc.service_name}}</div>
+                    {{ticketc.category}}
+                  </div>
+
+                  <div class="actionsgroup">
+                    <span class="badge bg-primary rounded-pill" style="font-size: 20px;">{{ticketc.registration_date}}</span>
+                    <a class="btn icon-edit d-block d-md-inline" [routerLink]="['/account-vendor/viewticketrequestcustomer',ticketc.ticket_id]"><i class="bi bi-eye fs-3"></i></a>                </div>
+                </li>
+
+            </ol>
+            <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="ticketsCustomer?.length === 0">
+              <div class="container-fluid py-5">
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-12">
+                          <h1 class="display-6 fw-normal mb-5 text-center">No Tienes Solicitudes</h1>
+                      </div>
+                  </div>
+              </div>
+            </div>   
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Solicitudes De Otros Vendedores">
+        <ng-template matTabContent> 
+            <ol class="list-group" *ngFor="let ticketv of ticketsVendor">
+                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Servicio: {{ticketv.service_name}}</div>
+                    {{ticketv.category}}
+                  </div>
+                  <div class="actionsgroup">
+                    <span class="badge bg-primary rounded-pill" style="font-size: 20px;">{{ticketv.registration_date}}</span>
+                    <a class="btn icon-edit d-block d-md-inline" [routerLink]="['/account-vendor/viewticketrequestvendor',ticketv.ticket_id]"><i class="bi bi-eye fs-3"></i></a>
+                </div>
+                </li>
+            </ol>
+            <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="ticketsVendor?.length === 0">
+              <div class="container-fluid py-5">
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-12">
+                          <h1 class="display-6 fw-normal mb-5 text-center">No Tienes Solicitudes</h1>
+                      </div>
+                  </div>
+              </div>
+            </div>  
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,63 @@
+<section class="animate__animated animate__zoomIn animate__faster container">
+
+    <div class="row d-flex justify-content-center justify-content-xl-between mb-3 mb-lg-5 p-2 p-lg-4">
+
+        <h2 class="display-6">Editar Productos</h2>
+        <hr class="mb-4">   
+        <form  [formGroup]="updateServiceForm" (ngSubmit)="updateService()">
+            <div class="col-12">
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-6">
+                        <label class="user-label">Nombre</label>
+                        <input appBlockCopyPaste type="text" class="form-control" name="service_name" [ngModel]="currentService?.service_name" formControlName="service_name">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="user-label">Descripcion</label>
+                      <textarea name="description" class="form-control" [ngModel]="currentService?.description" formControlName="description" rows="6"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <label class="user-label">Precio Min Aprox</label>
+                    <input appBlockCopyPaste type="number" name="minprice" class="form-control" [ngModel]="currentService?.minprice" formControlName="minprice">
+                                        <!--<mat-form-field appearance="fill" floatLabel="always">
+                      <mat-label>Precio Min Aprox</mat-label>
+                      <input matInput type="number" appBlockCopyPaste type="number" name="minprice" class="form-control example-right-align" placeholder="0"  formControlName="minprice">
+                      <span matPrefix>$&nbsp;</span>
+                      <span matSuffix>.00</span>
+                    </mat-form-field>-->
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <label class="user-label">Precio Max Aprox</label>
+                    <input appBlockCopyPaste type="number" name="maxprice" class="form-control" [ngModel]="currentService?.maxprice" formControlName="maxprice">
+                                        <!--<mat-form-field appearance="fill" floatLabel="always">
+                      <mat-label>Precio Min Aprox</mat-label>
+                      <input matInput type="number" appBlockCopyPaste type="number" name="minprice" class="form-control example-right-align" placeholder="0"  formControlName="minprice">
+                      <span matPrefix>$&nbsp;</span>
+                      <span matSuffix>.00</span>
+                    </mat-form-field>-->
+                  </div>
+
+                  <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                    <mat-label class="user-label">Categoria</mat-label>
+                    <mat-select  name="category" class="form-control" [ngModel]="currentService?.category" formControlName="category">
+                      <mat-option *ngFor="let category of categories" [value]="category.value">{{category.viewValue}}</mat-option>
+                    </mat-select>
+                  </div>
+
+                </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-purple d-block d-xl-inline mr-5 mb-3 mb-xl-0">Editar</button>
+                    </div>
+                </div>
+            </div>
+      </form>
+    </div>
+
+</section>

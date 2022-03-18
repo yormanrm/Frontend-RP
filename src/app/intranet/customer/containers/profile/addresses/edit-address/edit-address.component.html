@@ -1,0 +1,28 @@
+<section class="animate__animated animate__zoomIn animate__faster container">
+
+    <div class="row d-flex justify-content-center justify-content-xl-between mb-3 mb-lg-5 p-2 p-lg-4">
+
+        <h2 class="display-6">Editar Direccion</h2>
+        <hr class="mb-4">   
+        <form  [formGroup]="updateAddressForm" (ngSubmit)="updateAddress()">
+            <div class="col-12">
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-8">
+                      <label class="user-label">Direccion</label>
+                      <textarea appBlockCopyPaste name="address" class="form-control" [ngModel]="currentAddress?.address" formControlName="address" rows="3"></textarea>
+                    </div>
+                    <div class="col-auto mt-3 mt-md-0">
+                        <mat-slide-toggle [checked]="currentAddress?.default_address=='1'" name="default_address" formControlName="default_address">Predeterminado</mat-slide-toggle>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary d-block d-xl-inline mr-5 mb-3 mb-xl-0">Agregar</button>
+                    </div>
+                </div>
+            </div>
+      </form>
+    </div>
+
+</section>

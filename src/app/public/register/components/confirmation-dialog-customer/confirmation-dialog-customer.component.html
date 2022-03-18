@@ -1,0 +1,15 @@
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasCustomer" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header d-flex justify-content-center">
+        <h1 class="d-inline" style="text-transform: capitalize;">{{names}}</h1> <h1 class="d-inline">, todos tus datos son correctos?</h1>
+    </div>
+    <div class="offcanvas-body d-flex justify-content-end justify-content-xl-center">
+        
+        <form [formGroup]="customerChild" (ngSubmit)="registerCustomer()">
+            <button class="btn btn-lg btn-outline-danger me-3 d-none d-xl-inline" data-bs-dismiss="offcanvas" type="button">Cancelar</button>
+            <button class="btn btn-lg btn-success d-none d-xl-inline" data-bs-dismiss="offcanvas" type="submit">Confirmar</button>
+
+            <button class="btn btn-outline-danger me-3 d-inline d-xl-none" data-bs-dismiss="offcanvas" type="button">Cancelar</button>
+            <button class="btn btn-success d-inline d-xl-none" data-bs-dismiss="offcanvas" type="submit">Confirmar</button>
+        </form>
+    </div>
+</div>

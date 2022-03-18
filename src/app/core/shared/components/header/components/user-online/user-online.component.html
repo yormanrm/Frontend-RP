@@ -1,0 +1,28 @@
+<a class="navbar-tool text-decoration-none btn-accountOnline d-none d-xl-flex">
+    <div class="navbar-tool-icon-box">
+        <i class="bi bi-person-circle navbar-tool-icon"></i>
+    </div>
+    <div  class="navbar-tool-text">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownOnline" data-bs-toggle="dropdown" aria-expanded="false">
+                <small class="text-capitalize me-2">Hola, {{nameLogged}}</small>
+            </button>
+            <ul  class="dropdown-menu animate__animated animate__fadeIn animate__faster" aria-labelledby="dropdownOnline">
+              <li>
+                  <a class="dropdown-item" (click)="accountView()" style="cursor: pointer;">Mi Cuenta</a>
+            </li>
+              <li><a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </div>
+</a>
+
+<a class="navbar-tool text-decoration-none btn-accountOnline d-flex d-xl-none" (click)="accountView()" style="cursor: pointer;">
+    <div class="navbar-tool-icon-box">
+        <i class="bi bi-person-circle navbar-tool-icon"></i>
+    </div>
+    <div class="navbar-tool-text">
+        <small class="d-lg-block text-capitalize">{{nameLogged}}</small>
+    </div>
+</a>
+

@@ -1,0 +1,256 @@
+<div #scroll>
+    <div class="container-fluid shadow rounded-3" style="background-color: #ffff;">
+        <div class="row d-flex justify-content-center gx-5 p-0 p-md-3 p-xl-5">
+
+            <div class="col-3 border rounded-3 py-3 animate__animated animate__fadeInLeft animate__faster d-none d-xl-block">
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Buscador</h4>
+                    <hr>
+                    <div class="input-group d-flex py-3">
+                        <input #txtSearch type="text" class="form-control" placeholder="Buscar algun producto..." aria-label="Buscar algun producto..." aria-describedby="button-search">
+                        <button class="btn btn-purple" (click)="initPage()" (click)="onSearch(txtSearch.value)" type="button" id="button-search"><i class="bi bi-search"></i></button>
+                    </div>
+                </ul>
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Catalogo De:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span><i class="fas fa-tshirt me-4"></i>Productos</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span><i class="bi bi-magic me-4"></i>Servicios</span></a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Ordenar Por:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('recent')"><i class="fas fa-history d-none d-xl-inline me-3" ></i><span>Recien Agregados</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('mayorpr')"><i class="fas fa-sort-numeric-up d-none d-xl-inline me-3"></i><span>Mayor Precio</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('menorpr')"><i class="fas fa-sort-numeric-up-alt d-none d-xl-inline me-3"></i><span>Menor Precio</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('abc')"><i class="fas fa-sort-alpha-up-alt d-none d-xl-inline me-3"></i><span>Alfabeticamente (a,b,c,...)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('zyx')"><i class="fas fa-sort-alpha-up d-none d-xl-inline me-3"></i><span>Alfabeticamente (z,y,x,...)</span></a>
+                    </li>
+                </ul>
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Categorias:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span>Todos Los Productos</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Accesorios de Telefonia y Tablets')"><span>Accesorios de Telefonia y Tablets</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Accesorios y Perifericos Computacionales')"><span>Accesorios y Perifericos Computacionales</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Audifonos y Bocinas')"><span>Audifonos y Bocinas</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Automotriz y Refacciones')"><span>Automotriz y Refacciones</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Belleza y Cuidado Personal')"><span>Belleza y Cuidado Personal</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Calzado')"><span>Calzado</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Celulares')"><span>Celulares</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Cocina y Electrodomesticos')"><span>Cocina y Electrodomesticos</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Computadoras')"><span>Computadoras</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Electronica')"><span>Electronica</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ferreteria y Mejoras Del Hogar')"><span>Ferreteria y Mejoras Del Hogar</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Fiestas')"><span>Fiestas</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Juguetes')"><span>Juguetes</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Linea Blanca')"><span>Linea Blanca</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Maletas y Mochilas')"><span>Maletas y Mochilas</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Mascotas')"><span>Mascotas</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Materia Prima')"><span>Materia Prima</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Muebleria')"><span>Muebleria</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Caballero')"><span>Ropa Para Caballero</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Dama')"><span>Ropa Para Dama</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Niño')"><span>Ropa Para Niño</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Niña')"><span>Ropa Para Niña</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Bebe')"><span>Ropa Para Bebe</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Salud')"><span>Salud</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Tablets')"><span>Tablets</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Videojuegos y Consolas')"><span>Videojuegos y Consolas</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Otros')"><span>Otros</span></a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!--Columna de Filtros para Moviles-->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrolling">
+                <div class="offcanvas-header d-flex justify-content-end">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                <div class="offcanvas-body">
+
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Buscador</h4>
+                        <hr>
+                        <div class="input-group d-flex py-3">
+                            <input #txtSearch type="text" class="form-control" placeholder="Buscar algun producto..." aria-label="Buscar algun producto..." aria-describedby="button-search">
+                            <button class="btn btn-purple" (click)="initPage()" (click)="onSearch(txtSearch.value)" type="button" id="button-search"><i class="bi bi-search"></i></button>
+                        </div>
+                    </ul>
+    
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Catalogo De:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span><i class="fas fa-tshirt me-4"></i>Productos</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span><i class="bi bi-magic me-4"></i>Servicios</span></a>
+                        </li>
+                    </ul>
+    
+    
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Ordenar Por:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('recent')"><i class="fas fa-history d-none d-xl-inline me-3" ></i><span>Recien Agregados</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('mayorpr')"><i class="fas fa-sort-numeric-up d-none d-xl-inline me-3"></i><span>Mayor Precio</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('menorpr')"><i class="fas fa-sort-numeric-up-alt d-none d-xl-inline me-3"></i><span>Menor Precio</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('abc')"><i class="fas fa-sort-alpha-up-alt d-none d-xl-inline me-3"></i><span>Alfabeticamente (a,b,c,...)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('zyx')"><i class="fas fa-sort-alpha-up d-none d-xl-inline me-3"></i><span>Alfabeticamente (z,y,x,...)</span></a>
+                        </li>
+                    </ul>
+    
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Categorias:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span>Todos Los Productos</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Accesorios de Telefonia y Tablets')"><span>Accesorios de Telefonia y Tablets</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Accesorios y Perifericos Computacionales')"><span>Accesorios y Perifericos Computacionales</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Audifonos y Bocinas')"><span>Audifonos y Bocinas</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Automotriz y Refacciones')"><span>Automotriz y Refacciones</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Belleza y Cuidado Personal')"><span>Belleza y Cuidado Personal</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Calzado')"><span>Calzado</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Celulares')"><span>Celulares</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Cocina y Electrodomesticos')"><span>Cocina y Electrodomesticos</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Computadoras')"><span>Computadoras</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Electronica')"><span>Electronica</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ferreteria y Mejoras Del Hogar')"><span>Ferreteria y Mejoras Del Hogar</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Fiestas')"><span>Fiestas</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Juguetes')"><span>Juguetes</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Linea Blanca')"><span>Linea Blanca</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Maletas y Mochilas')"><span>Maletas y Mochilas</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Mascotas')"><span>Mascotas</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Materia Prima')"><span>Materia Prima</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Muebleria')"><span>Muebleria</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Caballero')"><span>Ropa Para Caballero</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Dama')"><span>Ropa Para Dama</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Niño')"><span>Ropa Para Niño</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Niña')"><span>Ropa Para Niña</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Ropa Para Bebe')"><span>Ropa Para Bebe</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Salud')"><span>Salud</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Tablets')"><span>Tablets</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Videojuegos y Consolas')"><span>Videojuegos y Consolas</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Otros')"><span>Otros</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-xl-9 productsContenedor">
+
+                <div class="row d-flex justify-content-end mb-4 mt-3 orderContenedor">
+                    <div class="col-auto d-block d-xl-none">
+                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtros</button>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 productsContenido">
+
+
+                    <div class="col product animate__animated animate__fadeIn" *ngFor="let product of (products | orderBy:page:order:category:search)">
+                        <div class="card">
+                            <a [routerLink]="['/viewproduct',product.product_id]" style="cursor: pointer;"><h5 class="card-header">{{product.product_name}}</h5></a>
+                            <div class="row g-0 d-flex justify-content-center">
+                                <div class="col-5 align-self-center img-column">
+                                    <a [routerLink]="['/viewproduct',product.product_id]" style="cursor: pointer;"><img class="img-fluid img-product p-3" src="http://localhost:3000/{{product?.path}}" alt=""></a>
+                                </div>
+                                <div class="col-7 align-self-center product-column">
+                                    <div class="card-body">
+                                        <div class="description mb-4">
+                                            <strong class="product-description-title">Descripcion:</strong>
+                                            <p class="product-description mb-3">{{product.description}}</p>
+                                            <strong style="font-size: 15px;">Disponible(s): <small class="fw-normal" style="font-size: 15px;">{{product.quantity}}</small></strong>
+                                        </div>
+                                        <!--<div class="description mb-4">
+                                            <strong class="product-description-title">Cantidad:</strong>
+                                            <input appBlockWrite type="number" class="form-control mb-2 text-center" name="cantidad" #cantidad value="1" min="1" max={{product.quantity}}>
+                                            <div class="text-center">
+                                                <small class="text-muted " style="font-size: 13px;">Disponible(s): {{product.quantity}}</small>
+                                            </div>
+                                        </div>-->
+                                        <div class="product-price mb-4">
+                                            <span class="price d-block">${{product.price}}</span>
+                                            <small class="shipment d-block">Envio: $99.99</small>
+                                        </div>
+                                        <div class="buttonsActions d-none d-xl-block">
+                                            <button class="btn btn-sm btn-outline-success w-100 d-block" type="button" (click)="addCart(product.product_id, product.vendor_id, '1')"><i class="bi bi-cart-plus me-1"></i>Agregar Al Carrito</button>
+                                        </div>  
+                                        <div class="buttonsActions d-block d-xl-none">
+                                            <button class="btn btn-sm btn-outline-success w-100 d-block" type="button" (click)="addCart(product.product_id, product.vendor_id, '1')"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="product-info px-3 py-2 d-flex justify-content-between">
+                                    <small class="product-subcategory">{{product.category}}</small>
+                                    <small class="product-seller"><a [routerLink]="['/business', product.vendor_id]" style="cursor: pointer;">{{product.business_name}}</a></small>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="(products | orderBy:page:order:category:search)?.length === 0">
+                        <div class="container-fluid py-5">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12">
+                                    <h1 class="display-6 fw-normal mb-5 text-center">Vaya, Parece Que Se Terminaron</h1>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-auto">
+                                    <button class="btn btn-outline-secondary mt-3 btn-lg" type="button" (click)="initPage()">Volver Al Inicio</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+
+                </div>
+
+                <div class="mt-5 row d-flex justify-content-end align-items-center p-3 p-lg-0">
+                    <div class="col-auto p-0">
+                        <button class="btn btn-outline-purple" aria-label="Previous" (click)="prevPage()" *ngIf="page != 0">Anterior</button>
+                    </div>
+                    <div class="col-auto p-0 ms-3">
+                        <button class="btn btn-outline-purple" aria-label="Next" (click)="nextPage()" *ngIf="(products | orderBy:page:order:category:search)?.length != 0">Siguiente</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

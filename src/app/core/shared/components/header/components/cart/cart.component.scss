@@ -1,0 +1,19 @@
+i{
+    font-size: 1.9rem;
+    color: white;
+}
+mat-icon{
+    font-size: 20px;
+    margin-left: -23px;
+}
+
+@media (max-width: 456px) {
+    i{
+        font-size: 1.5rem;
+    }
+    mat-icon{
+        font-size: 10px;
+        margin-left: -24px;
+        margin-right: 8px;
+    }
+}   

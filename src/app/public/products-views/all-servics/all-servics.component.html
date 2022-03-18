@@ -1,0 +1,228 @@
+<div #scroll>
+    <div class="container-fluid shadow rounded-3" style="background-color: #ffff;">
+        <div class="row d-flex justify-content-center gx-5 p-0 p-md-3 p-xl-5">
+
+            <div class="col-3 border rounded-3 py-3 animate__animated animate__fadeInLeft animate__faster d-none d-xl-block">
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Buscador</h4>
+                    <hr>
+                    <div class="input-group d-flex py-3">
+                        <input #txtSearch type="text" class="form-control" placeholder="Buscar algun servicio..." aria-label="Buscar algun servicio..." aria-describedby="button-search">
+                        <button class="btn btn-purple" (click)="initPage()" (click)="onSearch(txtSearch.value)" type="button" id="button-search"><i class="bi bi-search"></i></button>
+                    </div>
+                </ul>
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Catalogo De:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span><i class="fas fa-tshirt me-4"></i>Productos</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span><i class="bi bi-magic me-4"></i>Servicios</span></a>
+                    </li>
+                </ul>
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Ordenar Por:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('recent')"><i class="fas fa-history d-none d-xl-inline me-3" ></i><span>Recien Agregados</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('mayorpr')"><i class="fas fa-sort-numeric-up d-none d-xl-inline me-3"></i><span>Precio Maximo</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('menorpr')"><i class="fas fa-sort-numeric-up-alt d-none d-xl-inline me-3"></i><span>Precio Minimo</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('abc')"><i class="fas fa-sort-alpha-up-alt d-none d-xl-inline me-3"></i><span>Alfabeticamente (a,b,c,...)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('zyx')"><i class="fas fa-sort-alpha-up d-none d-xl-inline me-3"></i><span>Alfabeticamente (z,y,x,...)</span></a>
+                    </li>
+                </ul>
+
+                <ul class="nav flex-column filters mt-3">
+                    <h4>Por Categoria:</h4>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span>Todos Los Servicios</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Arquitectura e Ingenieria')"><span>Arquitectura e Ingenieria</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Audiovisual')"><span>Audiovisual</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Comunicacion')"><span>Comunicacion</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Contabilidad')"><span>Contabilidad</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Distribucion')"><span>Distribucion</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Enseñanza')"><span>Enseñanza</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Energia')"><span>Energia</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Financiero')"><span>Financiero</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Informatica y Computacion')"><span>Informatica y Computacion</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Juridico')"><span>Juridico</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Logistico')"><span>Logistico</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Mantenimiento')"><span>Mantenimiento</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Postal y Mensajeria')"><span>Postal y Mensajeria</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Reparacion')"><span>Reparacion</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Turismo')"><span>Turismo</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Transporte')"><span>Transporte</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Social')"><span>Social</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Salud')"><span>Salud</span></a>
+                        <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Otros')"><span>Otros</span></a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!--Columna de Filtros para Moviles-->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrolling">
+                <div class="offcanvas-header d-flex justify-content-end">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                <div class="offcanvas-body">
+
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Buscador</h4>
+                        <hr>
+                        <div class="input-group d-flex py-3">
+                            <input #txtSearch type="text" class="form-control" placeholder="Buscar algun servicio..." aria-label="Buscar algun servicio..." aria-describedby="button-search">
+                            <button class="btn btn-purple" (click)="initPage()" (click)="onSearch(txtSearch.value)" type="button" id="button-search"><i class="bi bi-search"></i></button>
+                        </div>
+                    </ul>
+
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Catalogo De:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allProducts()"><span><i class="fas fa-tshirt me-4"></i>Productos</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span><i class="bi bi-magic me-4"></i>Servicios</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Ordenar Por:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('recent')"><i class="fas fa-history d-none d-xl-inline me-3" ></i><span>Recien Agregados</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('mayorpr')"><i class="fas fa-sort-numeric-up d-none d-xl-inline me-3"></i><span>Precio Maximo</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('menorpr')"><i class="fas fa-sort-numeric-up-alt d-none d-xl-inline me-3"></i><span>Precio Minimo</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('abc')"><i class="fas fa-sort-alpha-up-alt d-none d-xl-inline me-3"></i><span>Alfabeticamente (a,b,c,...)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="orderBy('zyx')"><i class="fas fa-sort-alpha-up d-none d-xl-inline me-3"></i><span>Alfabeticamente (z,y,x,...)</span></a>
+                        </li>
+                    </ul>
+    
+                    <ul class="nav flex-column filters mt-3">
+                        <h4>Por Categoria:</h4>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)="allServices()"><span>Todos Los Servicios</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Arquitectura e Ingenieria')"><span>Arquitectura e Ingenieria</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Audiovisual')"><span>Audiovisual</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Comunicacion')"><span>Comunicacion</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Contabilidad')"><span>Contabilidad</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Distribucion')"><span>Distribucion</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Enseñanza')"><span>Enseñanza</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Energia')"><span>Energia</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Financiero')"><span>Financiero</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Informatica y Computacion')"><span>Informatica y Computacion</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Juridico')"><span>Juridico</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Logistico')"><span>Logistico</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Mantenimiento')"><span>Mantenimiento</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Postal y Mensajeria')"><span>Postal y Mensajeria</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Reparacion')"><span>Reparacion</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Turismo')"><span>Turismo</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Transporte')"><span>Transporte</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Social')"><span>Social</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Salud')"><span>Salud</span></a>
+                            <a class="nav-link" data-bs-toggle="pill" style="cursor: pointer;" (click)=" initPage()" (click)="filterBy('Otros')"><span>Otros</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-xl-9 productsContenedor">
+
+                <div class="row d-flex justify-content-end mb-4 mt-3 orderContenedor">
+                    <div class="col-auto d-block d-xl-none">
+                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtros</button>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 productsContenido">
+
+
+                    <div class="col product animate__animated animate__fadeIn" *ngFor="let service of services | servicsorderBy:page:order:category:search">
+                        <div class="card">
+                            <a [routerLink]="['/viewservice',service.service_id]" style="cursor: pointer;"><h5 class="card-header">{{service.service_name}}</h5></a>
+                            <div class="row g-0 d-flex justify-content-center">
+                                <div class="col-5 align-self-center img-column">
+                                    <a [routerLink]="['/viewservice',service.service_id]" style="cursor: pointer;"><img class="img-fluid img-product p-3" src="http://localhost:3000/{{service?.path}}" alt=""></a>
+                                </div>
+                                <div class="col-7 align-self-center product-column"> 
+                                    <div class="card-body">
+                                        <div class="description mb-3">
+                                            <strong class="product-description-title">Descripcion:</strong>
+                                            <p class="product-description mb-3">{{service.description}}</p>
+                                        </div>
+                                        <div class="product-price mb-4">
+                                            <strong class="product-description-title">Precio Min:<span class="price d-block">${{service.minprice}}</span></strong>
+                                            <strong class="product-description-title">Precio Max:<span class="price d-block">${{service.maxprice}}</span></strong>
+                                        </div>
+                                        <div class="buttonsActions d-block d-xl-none">
+                                            <a class="btn btn-sm btn-purple w-100 mb-2 d-block" href="#" >Comprar</a>
+                                            <button class="btn btn-sm btn-outline-success w-100 d-block" type="button"><i class="bi bi-cart-plus me-1"></i>Solicitar</button>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="product-info px-3 py-2 d-flex justify-content-between">
+                                    <small class="product-subcategory">{{service.category}}</small>
+                                    <small class="product-seller"><a [routerLink]="['/business', service.vendor_id]" style="cursor: pointer;">{{service.business_name}}</a></small>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 mb-4 bg-light w-100 rounded-3 animate__animated animate__bounceIn" *ngIf="(services | servicsorderBy:page:order:category:search)?.length === 0">
+                        <div class="container-fluid py-5">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12">
+                                    <h1 class="display-6 fw-normal mb-5 text-center">Vaya, Parece Que Se Terminaron</h1>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-auto">
+                                    <button class="btn btn-outline-secondary mt-3 btn-lg" type="button" (click)="initPage()">Volver Al Inicio</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+
+               <div class="mt-5 row d-flex justify-content-end align-items-center p-3 p-lg-0">
+                    <div class="col-auto p-0">
+                        <button class="btn btn-outline-purple" aria-label="Previous" (click)="prevPage()" *ngIf="page != 0">Anterior</button>
+                    </div>
+                    <div class="col-auto p-0 ms-3">
+                        <button class="btn btn-outline-purple" aria-label="Next" (click)="nextPage()" *ngIf="(services | servicsorderBy:page:order:category:search)?.length != 0">Siguiente</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

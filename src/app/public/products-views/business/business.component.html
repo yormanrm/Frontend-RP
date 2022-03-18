@@ -1,0 +1,74 @@
+<div class="hold-transition sidebar-mini">
+    <div class="wrapper my-lg-5 my-0">
+        <div class="content-wrapper" style="background-color: #ebebeb !important;">
+            <div class="container">
+                <div class="row mb-0 mb-lg-5">
+                    <div class="col-12" style="padding-right: 0 !important; padding-left: 0 !important;">
+                        <div class="card card-primary rounded-3 shadow px-0 px-lg-4">
+                          <div class="card-body box-profile">
+                            <div class="text-center">
+                              <img class="profile-user-img img-fluid img-circle"
+                                   src="http://localhost:3000/{{currentBusiness.path}}"
+                                   alt="Business profile picture">
+                            </div>
+                            <h3 class="profile-username text-center mb-2">{{currentBusiness?.name}}</h3>
+
+                            <strong><i class="fas fa-address-card mr-1 mb-3"></i> Acerca De</strong>
+            
+                            <p class="text-muted">{{currentBusiness?.about}}</p>
+            
+                            <hr>
+            
+                            <strong><i class="fas fa-map-marker-alt mr-1 mb-3"></i> Localizacion</strong>
+            
+                            <p class="text-muted">{{currentBusiness?.address}}</p>
+            
+                            <hr>
+            
+                            <strong><i class="bi bi-telephone-fill mr-1 mb-3"></i> Telefono</strong>
+            
+                            <p class="text-muted">{{currentBusiness?.phone}}</p>
+            
+                            <hr>
+            
+                            <strong><i class="bi bi-envelope-fill mr-1 mb-3"></i> Email</strong>
+            
+                            <p class="text-muted">{{currentBusiness?.email}}</p>
+
+                          </div>
+                        </div>
+            
+                        <!--<div class="card card-primary">
+                          <div class="card-header header2">
+                            <h3 class="card-title">Informacion</h3>
+                          </div>
+                          <div class="card-body">
+                            <ul class="list-group list-group-unbordered">
+                              <li class="list-group-item px-lg-5 px-0">
+                                <b>Productos</b> <a class="float-right">{{totalProducts}}</a>
+                              </li>
+                              <li class="list-group-item px-lg-5 px-0">
+                                <b>Servicios</b> <a class="float-right">{{totalServices}}</a>
+                              </li>
+                              <li class="list-group-item border-bottom-0 px-lg-5 px-0">
+                                <b>Ventas Realizadas</b> <a class="float-right">13,287</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="row mx-lg-0 mx-3">
+                  <div class="col-12 card-outline-purple">
+                    <app-products-businessByDate [businessID]="currentBusiness.business_id"></app-products-businessByDate>
+                  </div>
+                </div>
+                <div class="row mx-lg-0 mx-3">
+                  <div class="col-12 card-outline-purple">
+                    <app-services-businessByDate [businessID]="currentBusiness.business_id"></app-services-businessByDate>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

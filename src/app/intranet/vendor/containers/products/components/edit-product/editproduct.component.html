@@ -1,0 +1,62 @@
+<section class="animate__animated animate__zoomIn animate__faster container">
+
+    <div class="row d-flex justify-content-center justify-content-xl-between mb-3 mb-lg-5 p-2 p-lg-4">
+
+        <h2 class="display-6">Editar Productos</h2>
+        <hr class="mb-4">   
+        <form  [formGroup]="updateProductForm" (ngSubmit)="updateProduct()">
+            <div class="col-12">
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-6">
+                        <label class="user-label">Nombre</label>
+                        <input appBlockCopyPaste type="text" class="form-control" name="product_name" [ngModel]="currentProduct?.product_name" formControlName="product_name">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="user-label">Descripcion</label>
+                      <textarea name="description" class="form-control" [ngModel]="currentProduct?.description" formControlName="description" rows="6"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+
+                  <div class="col-12 col-md-4">
+                    <label class="user-label">Precio</label>
+                    <input appBlockCopyPaste type="number" name="price" class="form-control" [ngModel]="currentProduct?.price" formControlName="price">
+                    <!--<mat-form-field appearance="fill" floatLabel="always">
+                      <mat-label>Precio Min Aprox</mat-label>
+                      <input matInput type="number" appBlockCopyPaste type="number" name="minprice" class="form-control example-right-align" placeholder="0"  formControlName="minprice">
+                      <span matPrefix>$&nbsp;</span>
+                      <span matSuffix>.00</span>
+                    </mat-form-field>-->
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <label class="user-label">Marca</label>
+                    <input appBlockCopyPaste type="text" name="brand" class="form-control" [ngModel]="currentProduct?.brand" formControlName="brand">
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <label class="user-label">Cantidad</label>
+                    <input appBlockCopyPaste type="number" name="quantity" class="form-control" [ngModel]="currentProduct?.quantity" formControlName="quantity">
+                  </div>
+
+              </div>
+
+                <div class="row mb-5 d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-4">
+                      <mat-label class="user-label">Categoria</mat-label>
+                      <mat-select  name="category" class="form-control" [ngModel]="currentProduct?.category" formControlName="category">
+                        <mat-option *ngFor="let category of categories" [value]="category.value">{{category.viewValue}}</mat-option>
+                      </mat-select>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-purple d-block d-xl-inline mr-5 mb-3 mb-xl-0">Editar</button>
+                    </div>
+                </div>
+            </div>
+      </form>
+    </div>
+
+</section>

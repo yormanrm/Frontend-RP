@@ -1,0 +1,47 @@
+<section class="animate__animated animate__zoomIn animate__faster">
+    <div class="row d-flex justify-content-end mb-4">
+        <div class="col-auto">
+            <a class="enlaceAdd" [routerLink]="['/business', currentBusiness.business_id]" style="cursor: pointer;"><i class="bi bi-eye-fill me-2"></i>Ver Perfil Empresarial</a>
+        </div>
+    </div>
+    <form class="py-5 px-0 px-sm-1 px-md-2 px-lg-3 px-xl-5 animate__animated animate__fadeIn" [formGroup]="businessInfoForm" (ngSubmit)="updateBusiness()">
+        <div class="mb-4">
+            <label class="form-label user-label" for="nameBusiness">Nombre De La Empresa</label>
+            <input appBlockCopyPaste class="form-control" type="text" id="nameBusiness" name="name" placeholder="Nombre De La Empresa" [ngModel]="currentBusiness?.name" formControlName="name" style="text-transform: capitalize;">
+        </div>
+        <div class="mb-4">
+            <label class="form-label user-label" for="addressBusiness">Direccion De La Empresa</label>
+            <input appBlockCopyPaste class="form-control" type="text" id="addressBusiness" name="address" placeholder="Direccion De La Empresa" [ngModel]="currentBusiness?.address" formControlName="address">
+        </div>
+        <div class="mb-4">
+            <label class="form-label user-label" for="aboutBusiness">Acerca De La Empresa</label>
+            <textarea appBlockCopyPaste name="about" class="form-control" id="aboutBusiness" [ngModel]="currentBusiness?.about" formControlName="about" rows="6"></textarea>
+        </div>
+        <div class="mb-4">
+            <label class="form-label user-label" for="phoneBusiness">Telefono De La Empresa</label>
+            <input appBlockCopyPaste class="form-control" type="text" id="phoneBusiness" name="phone" placeholder="Telefono fijo o Celular a 10 digitos" [ngModel]="currentBusiness?.phone" formControlName="phone">
+        </div>
+        <div class="mb-4">
+            <label class="form-label user-label" for="emailBusiness">Email De La Empresa</label>
+            <input appBlockCopyPaste class="form-control" type="text" id="emailBusiness" name="email" placeholder="email@mail.com" [ngModel]="currentBusiness?.email" formControlName="email">
+        </div>
+        <div class="mb-4">
+            <label for="formFile" class="form-label user-label">Imagen De Perfil</label>
+            <input class="form-control" type="file"  id="fileUpload" accept="image/*" name="image" formControlName="image" (change)="selectMultipleImage($event)">
+        </div>
+      <!--  <div >
+        <div class="card-body" >
+            <img class="card-img-top" src="http://localhost:3000/{{currentBusiness.path}}" alt="" id="imagen">
+          </div>
+          <button class="btn btn-outline-danger btn-block " id="{{currentBusiness.business_id}}"
+            (click)="deleteImg(currentBusiness.business_id)">Eliminar</button>
+        </div>-->
+
+    
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <button type="submit" class="btn btn-purple d-block mx-auto">Actualizar</button>
+            </div>
+        </div>
+    </form>    
+</section>

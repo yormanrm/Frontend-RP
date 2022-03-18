@@ -1,0 +1,138 @@
+.filters{
+    .nav-item{
+        .nav-link{
+            color: rgb(80, 80, 80);
+        }
+    }
+    .nav-item .active{
+        background: rgb(121, 20, 204);
+        color: rgb(255, 255, 255);
+    }
+}
+
+.form-control{
+  &:focus {
+    border-color: rgb(121, 20, 204);;
+    box-shadow: none;
+  }
+  &:checked {
+    border: none;
+    background-color: none;
+  }
+}
+
+.productsContenedor{
+    .orderContenedor{
+        label{
+            font-weight: 700;
+        }
+        select{
+            border: none;
+            &:focus {
+                box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+            }
+        }
+        button{
+            &:focus {
+                box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+            }
+        }
+    }
+    .productsContenido{
+        .product{
+            margin-bottom: 25px;
+            .card{
+                a{
+                    text-decoration: none;
+                    .card-header{
+                        font-size: 20px;
+                        color: rgb(0,0,0);
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        display: block;
+                        overflow: hidden;
+                    }
+                }
+                .row{
+                    .img-column{
+                        img{
+                            width: 100%;
+                            height: 200px;
+                        }
+                    }
+                    .product-column{
+                        .card-body{
+                            .description{
+                                .product-description-title{
+                                    font-size: 15px;
+                                }
+                                .product-description{
+                                    text-align: justify;
+                                    margin-bottom: 0;
+                                    font-size: 15px;
+                                    display: block;
+
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3; /* number of lines to show */
+                                            line-clamp: 3; 
+                                    -webkit-box-orient: vertical;
+                                }
+                            }
+                            .product-price{
+                                text-align: center;
+                                .price{
+                                    font-weight: 300;
+                                    font-size: 20px;
+                                }
+                                .shipment{
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                }
+                            }
+        
+                            .buttonsActions > a, .buttonsActions > button{
+                                &:focus {
+                                    box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+                                }
+                            }
+                        }
+                    }
+                    .product-info{
+                        font-size: 14px;
+                        color: rgb(150,150,150);
+                        .product-seller > a{
+                            transition: color .2s ease-in-out;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: block;
+                            overflow: hidden;
+                            width: 12ch;
+                            color: rgb(151, 151, 151);
+                            &:hover{
+                                color: rgb(0, 0, 0);
+                                text-decoration: underline;
+                            }
+                        }
+                        .product-subcategory{
+                            transition: color .2s ease-in-out;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: block;
+                            overflow: hidden;
+                            width: 12ch;
+                            color: rgb(151, 151, 151);
+                        }
+                    }
+                }
+                transition: all .25s ease-in-out;
+                &:hover{
+                    box-shadow: -6px 10px 17px -3px rgba(133,133,133,0.49);
+                    -webkit-box-shadow: -6px 10px 17px -3px rgba(133,133,133,0.49);
+                    -moz-box-shadow: -6px 10px 17px -3px rgba(133,133,133,0.49);
+                }
+            }
+        }
+    }
+}

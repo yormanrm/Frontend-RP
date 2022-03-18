@@ -1,0 +1,89 @@
+<div class="container-md mt-0 mb-0 mt-md-5 mb-md-5 px-0">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-11">
+      <div
+        class="card animate__animated animate__zoomIn animate__faster shadow rounded-3"
+      >
+        <div class="row">
+          <div class="col-md-6">
+            <div class="images p-3">
+              <div class="text-center p-4" >
+                <img
+                  id="main-image"
+                  src="http://localhost:3000/{{currentService?.path}}"
+                  class="img-main img-fluid"
+                />
+              </div>
+              <!--
+                            <div class="thumbnail text-center d-inline" *ngFor="let servicio of this.imagenes"> 
+                                <img onclick="change_image(this)" src="http://localhost:3000/{{servicio?.path}}" class="img-wait img-thumbnail img-fluid ms-3"> 
+                            </div>
+                            -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="product p-4" style="background: rgb(255, 255, 255)">
+              <div class="mt-4 mb-3">
+                <h5 class="text-uppercase">
+                  {{ currentService?.service_name }}
+                </h5>
+                <a
+                  class="text-uppercase text-muted brand text-decoration-none"
+                  [routerLink]="['/business', currentService?.vendor_id]"
+                  >{{ currentService?.business_name }}</a
+                >
+                <div class="price d-flex flex-row align-items-center mt-3">
+                  <strong>Precio Min:</strong>
+                  <span class="ms-2">${{ currentService?.minprice }}</span>
+                </div>
+                <div class="price d-flex flex-row align-items-center">
+                  <strong>Precio Max:</strong>
+                  <span class="ms-2">${{ currentService?.maxprice }}</span>
+                </div>
+              </div>
+              <strong>Descripcion</strong>
+              <p class="about">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+                sapiente mollitia, molestiae omnis perferendis distinctio quos
+                minus cumque. Autem debitis maiores expedita id temporibus
+                perspiciatis, nobis aspernatur. Nesciunt, cum! Asperiores est
+                dolorum, voluptate, ut aspernatur aperiam perferendis quisquam
+                hic esse unde molestiae ipsam ducimus! Harum vel ratione
+                perspiciatis. Reprehenderit ipsum atque incidunt, facere maxime
+                neque ex eos eligendi tempore. Hic, asperiores reiciendis
+                pariatur sunt nisi quisquam nobis numquam explicabo nihil fuga.
+                Quos architecto incidunt hic velit mollitia deserunt officia
+                nemo minus, quod quisquam doloribus, accusantium, maiores
+                similique blanditiis nostrum voluptate voluptas aperiam minima.
+                Enim aperiam alias nam? Recusandae, accusamus voluptatum!
+              </p>
+              <div
+                class="cart mt-5 d-flex justify-content-center align-items-center"
+              >
+                <button class="btn btn-purple text-uppercase mr-2 px-4" data-bs-toggle="modal" data-bs-target="#modal-insertticket">
+                  Crear Ticket
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-10 card-outline-purple">
+      <app-products-businessByDate
+        [businessID]="currentService.business_id"
+      ></app-products-businessByDate>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-10 card-outline-purple">
+      <app-services-businessByDate
+        [businessID]="currentService.business_id"
+      ></app-services-businessByDate>
+    </div>
+  </div>
+</div>
+
+<app-createticket></app-createticket>

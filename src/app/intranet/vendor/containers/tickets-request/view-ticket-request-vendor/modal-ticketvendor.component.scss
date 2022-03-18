@@ -1,0 +1,13 @@
+.user-label{
+    font-size: 18px;
+    font-weight: 700;
+}
+.user-campo{
+    background: none;
+    padding: 10px;
+    font-size: 15px;
+    &:focus {
+        border-color: rgb(200,200,200);
+        box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+    }
+}

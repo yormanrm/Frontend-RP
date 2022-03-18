@@ -1,0 +1,61 @@
+<div class="table-responsive my-5">
+    <table class="table table-hover">
+        <thead class="text-center">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="align-middle" *ngIf="roleLogged === 'Customer'">
+            <tr *ngFor="let item of cartCustomer; let i=index">
+                <td class="fw-bolder">{{i+1}}</td>
+                <td class="text-center">
+                    <a [routerLink]="['/viewproduct', item.product_id]" style="cursor: pointer;" class="text-decoration-none">
+                        <img class="img-fluid img-product img-thumbnail d-none d-xl-inline" src="http://localhost:3000/{{item.path}}" alt="img-product">
+                        <p class="d-inline ms-xl-3 ms-0 product-link">{{item.product_name}}</p>
+                    </a>
+                </td>
+                <td class="text-center text-muted p-2 product-price">${{item.price}}</td>
+                <td class="text-center p-5">
+                    <input class="form-control text-center" #cantidad type="number" max={{item.stock}} value={{item.quantity}} min="1"/>
+                    <input class="d-none" #stock type="number" value={{item.stock}} min="1"/>
+                    <small class="text-muted">Disponible: {{item.stock}}</small>
+                </td>
+                <td class="text-center text-muted p-2 product-price">${{item.total}}</td>
+                <td class="text-center"><button type="submit" class="btn btn-quantity" (click)="updateCartItem(item.cartitem_id, cantidad.value, stock.value)">Cambiar Cantidad</button></td>
+                <td class="text-center"><button type="submit" class="btn icon-drop" (click)="deleteCartItem(item.cartitem_id)"><i class="bi bi-trash"></i></button></td>
+            </tr>
+        </tbody>
+        <tbody class="align-middle" *ngIf="roleLogged === 'Vendor'">
+            <tr *ngFor="let item of cartVendor; let i=index">
+                <td class="fw-bolder">{{i+1}}</td>
+                <td class="text-center">
+                    <a [routerLink]="['/viewproduct', item.product_id]" style="cursor: pointer;" class="text-decoration-none">
+                        <img class="img-fluid img-product img-thumbnail d-none d-xl-inline" src="http://localhost:3000/{{item.path}}" alt="img-product">
+                        <p class="d-inline ms-xl-3 ms-0 product-link">{{item.product_name}}</p>
+                    </a>
+                </td>
+                <td class="text-center text-muted p-2 product-price">${{item.price}}</td>
+                <td class="text-center p-5">
+                    <input class="form-control text-center" #cantidad type="number" max={{item.stock}} value={{item.quantity}} min="1"/>
+                    <input class="d-none" #stock type="number" value={{item.stock}} min="1"/>
+                    <small class="text-muted">Disponible: {{item.stock}}</small>
+                </td>
+                <td class="text-center text-muted p-2 product-price">${{item.total}}</td>
+                <td class="text-center"><button type="submit" class="btn btn-quantity" (click)="updateCartItem(item.cartitem_id, cantidad.value, stock.value)">Cambiar Cantidad</button></td>
+                <td class="text-center"><button type="submit" class="btn icon-drop" (click)="deleteCartItem(item.cartitem_id)"><i class="bi bi-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-auto">
+        <button matStepperNext class="btn btn-outline-purple">Confirmar Carrito</button>
+    </div>
+</div>

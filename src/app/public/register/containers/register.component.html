@@ -1,0 +1,25 @@
+<section class="container-lg p-custom">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-8">
+            <div class="card shadow">
+                <div class="card-header py-4">
+                    <h2>Registrate</h2>
+                </div>
+                <div class="card-body">
+                    <mat-tab-group dynamicHeight mat-align-tabs="center">
+                        <mat-tab label="Me Interesa Solo Comprar">
+                            <ng-template matTabContent>
+                                <app-formcustomer></app-formcustomer>
+                            </ng-template>
+                        </mat-tab>
+                        <mat-tab label="Voy A Vender">
+                            <ng-template matTabContent>
+                                <app-formvendor></app-formvendor>
+                            </ng-template>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

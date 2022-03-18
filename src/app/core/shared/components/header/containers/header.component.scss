@@ -1,0 +1,355 @@
+header {
+  .bar{
+    background: rgb(72, 10, 122);
+  }
+
+  /*.navbar-collapse {
+    .nav-item {
+      .nav-link {
+        color: rgb(255, 255, 255) !important;
+      }
+    }
+
+    .group2 {
+      min-width: 100% !important;
+      .searchinput2 {
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+        }
+      }
+      .searchbtn2 {
+        background: rgb(103, 64, 209);
+        color: rgb(255, 255, 255);
+        &:hover {
+          background: rgb(89, 55, 182);
+        }
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+        }
+      }
+    }
+  }*/
+
+  /*.bar2 {
+    background: #232f3e;
+    padding: 5px;
+    .nav-item {
+      .nav-link {
+        color: white;
+        font-weight: 300;
+      }
+      .yamm-content {
+        background: #232f3e;
+        .widget {
+          .card {
+            border: none;
+            img {
+              filter: brightness(0.8);
+              width: 100%;
+              height: 200px !important;
+              transition: filter 0.25s ease-in-out;
+            }
+            .card-img-overlay {
+              .card-body {
+                .card-title {
+                  font-size: 30px;
+                  letter-spacing: 5px;
+                  color: white;
+                  text-decoration: none;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }*/
+}
+
+/*header{
+  .bar1{
+    background: rgb(72, 10, 122);
+    .navbar-brand {
+      p {
+        color: rgb(255, 255, 255);
+      }
+    }
+    .input-group {
+      max-width: 50%;
+      .searchselect {
+        max-width: 12rem;
+        font-size: 1rem;
+        color: rgb(100, 100, 100);
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0);
+        }
+      }
+      .searchinput {
+        max-width: 50rem;
+        font-weight: 300;
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
+        }
+      }
+      .searchbtn {
+        background: rgb(103, 64, 209);
+        color: rgb(255, 255, 255);
+        &:hover {
+          background: rgb(89, 55, 182);
+        }
+        &:focus {
+          border-color: rgba(0, 0, 0, 0);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
+        }
+      }
+    }
+    .widgets{
+      button{
+        i{
+          font-size: 30px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+        &:focus {
+          border-color: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .navbar-collapse {
+      .nav-item {
+        .nav-link {
+          color: rgb(255, 255, 255) !important;
+        }
+      }
+  
+      .group2 {
+        min-width: 100% !important;
+        .searchinput2 {
+          &:focus {
+            border-color: rgb(200, 200, 200);
+            box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+          }
+        }
+        .searchbtn2 {
+          background: rgb(103, 64, 209);
+          color: rgb(255, 255, 255);
+          &:hover {
+            background: rgb(89, 55, 182);
+          }
+          &:focus {
+            border-color: rgb(200, 200, 200);
+            box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+          }
+        }
+      }
+    }
+  }
+  .bar2 {
+    background: #232f3e;
+    padding: 5px;
+    .nav-item {
+      .nav-link {
+        color: white;
+        font-weight: 300;
+      }
+      .yamm-content {
+        background: #232f3e;
+        .widget {
+          .card {
+            border: none;
+            img {
+              filter: brightness(0.8);
+              width: 100%;
+              height: 200px !important;
+              transition: filter 0.25s ease-in-out;
+            }
+            .card-img-overlay {
+              .card-body {
+                .card-title {
+                  font-size: 30px;
+                  letter-spacing: 5px;
+                }
+                .lista-categ {
+                  display: none;
+                  .categ {
+                    a {
+                      font-size: 18px;
+                      text-decoration: none;
+                      color: rgb(255, 255, 255);
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:hover {
+            .card {
+              img {
+                filter: brightness(0.3);
+              }
+              .card-img-overlay {
+                .card-body {
+                  .card-title {
+                    display: none;
+                  }
+                  .lista-categ {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/
+/*
+header {
+  .bar1 {
+    background: rgb(72, 10, 122);
+    .bar1-contenido {
+      .navbar-brand {
+        p {
+          color: rgb(255, 255, 255);
+        }
+      }
+      .input-group {
+        max-width: 50%;
+        justify-content: center;
+        .searchselect {
+          max-width: 12rem;
+          font-size: 1rem;
+          color: rgb(100, 100, 100);
+          &:focus {
+            border-color: rgb(200, 200, 200);
+            box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0);
+          }
+        }
+        .searchinput {
+          max-width: 50rem;
+          font-weight: 300;
+          &:focus {
+            border-color: rgb(200, 200, 200);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
+          }
+        }
+        .searchbtn {
+          background: rgb(103, 64, 209);
+          color: rgb(255, 255, 255);
+          &:hover {
+            background: rgb(89, 55, 182);
+          }
+          &:focus {
+            border-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    .nav-item {
+      .nav-link {
+        color: rgb(255, 255, 255) !important;
+      }
+    }
+
+    .group2 {
+      min-width: 100% !important;
+      .searchinput2 {
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+        }
+      }
+      .searchbtn2 {
+        background: rgb(103, 64, 209);
+        color: rgb(255, 255, 255);
+        &:hover {
+          background: rgb(89, 55, 182);
+        }
+        &:focus {
+          border-color: rgb(200, 200, 200);
+          box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+        }
+      }
+    }
+  }
+
+  .bar2 {
+    background: #232f3e;
+    padding: 5px;
+    .nav-item {
+      .nav-link {
+        color: white;
+        font-weight: 300;
+      }
+      .yamm-content {
+        background: #232f3e;
+        .widget {
+          .card {
+            border: none;
+            img {
+              filter: brightness(0.8);
+              width: 100%;
+              height: 200px !important;
+              transition: filter 0.25s ease-in-out;
+            }
+            .card-img-overlay {
+              .card-body {
+                .card-title {
+                  font-size: 30px;
+                  letter-spacing: 5px;
+                }
+                .lista-categ {
+                  display: none;
+                  .categ {
+                    a {
+                      font-size: 18px;
+                      text-decoration: none;
+                      color: rgb(255, 255, 255);
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:hover {
+            .card {
+              img {
+                filter: brightness(0.3);
+              }
+              .card-img-overlay {
+                .card-body {
+                  .card-title {
+                    display: none;
+                  }
+                  .lista-categ {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/

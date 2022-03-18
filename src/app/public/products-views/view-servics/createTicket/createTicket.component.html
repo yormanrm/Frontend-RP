@@ -1,0 +1,84 @@
+<div class="modal fade" id="modal-insertticket" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-insertticketLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="modal-insertproductLabel">Solicitar Servicio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0 p-lg-5" *ngIf="roleLogged === 'Customer'" >
+            <form  [formGroup]="insertTicketCustomerForm" (ngSubmit)="insertTicket()" >
+                <input type="text" id="seller" class="d-none" value={{currentService?.vendor_id}}>
+                
+                <div class="col-12">
+                        <div class="row mb-5 d-flex justify-content-center align-items-center">
+                            <div class="col-12">
+                                <label class="user-label">Nombre</label>
+                                <input appBlockCopyPaste type="text" class="form-control" name="name" formControlName="name">
+                            </div>
+                        </div>
+                        <div class="row mb-5 d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6">
+                                <label class="user-label">Telefono</label>
+                                <input appBlockCopyPaste type="text" name="phone" class="form-control" formControlName="phone">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="user-label">Email</label>
+                                <input appBlockCopyPaste type="email" class="form-control" name="email" formControlName="email">
+                            </div>
+                        </div>
+
+                        <div class="row mb-5 d-flex justify-content-center align-items-center">
+                            <div class="col-12">
+                              <label class="user-label">Comentario</label>
+                              <textarea name="comment" class="form-control" formControlName="comment" rows="6"></textarea>
+                            </div>
+                        </div>
+    
+                        <div class="row justify-content-center mt-3">
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-purple d-block d-xl-inline mr-5 mb-3 mb-xl-0" data-bs-dismiss="modal">Crear Ticket</button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-body p-0 p-lg-5" *ngIf="roleLogged === 'Vendor'" >
+            <form  [formGroup]="insertTicketVendorForm" (ngSubmit)="insertTicket()" *ngIf="roleLogged === 'Vendor'">
+                <input type="text" id="seller" class="d-none" value={{currentService?.vendor_id}}>
+                <div class="col-12">
+                    <div class="row mb-5 d-flex justify-content-center align-items-center">
+                        <div class="col-12">
+                            <label class="user-label">Nombre</label>
+                            <input appBlockCopyPaste type="text" class="form-control" name="name" formControlName="name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 d-flex justify-content-center align-items-center">
+                        <div class="col-12 col-md-6">
+                            <label class="user-label">Telefono</label>
+                            <input appBlockCopyPaste type="text" name="phone" class="form-control" formControlName="phone">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="user-label">Email</label>
+                            <input appBlockCopyPaste type="email" class="form-control" name="email" formControlName="email">
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 d-flex justify-content-center align-items-center">
+                        <div class="col-12">
+                          <label class="user-label">Comentario</label>
+                          <textarea name="comment" class="form-control" formControlName="comment" rows="6"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-purple d-block d-xl-inline mr-5 mb-3 mb-xl-0" data-bs-dismiss="modal">Crear Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>

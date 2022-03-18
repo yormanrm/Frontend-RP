@@ -1,0 +1,69 @@
+
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.cc-number.identified {
+    background-repeat: no-repeat;
+    background-position-y: 11px;
+    background-position-x: 99%
+}
+
+.right-card {
+    border-top: 10px rgb(121, 20, 204) solid;
+    padding-top: 1rem;
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+    width: -webkit-fill-available
+}
+
+li.borderless {
+    border-top: 0 none !important;
+    font-size: 15px;
+    padding: 0;
+    padding-top: 5%
+}
+
+.fa-check {
+    color: rgb(0, 195, 255)
+}
+
+.card,
+.card-header,
+.card-footer {
+    background-color: white !important
+}
+
+.card-header {
+    border-bottom: none
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.second-card,
+.first-card {
+    border-top: 1px solid #ccc !important;
+    padding-top: 2rem
+}
+
+.card-image {
+    width: 45px;
+    margin-top: -9px
+}
+
+.img-product{
+    width: 64px !important;
+    height: 64px !important;
+ }
+
+@media (max-width: 1000px) {
+    .card {
+        padding: 0 !important
+    }
+}

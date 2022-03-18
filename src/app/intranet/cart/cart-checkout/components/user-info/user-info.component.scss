@@ -1,0 +1,43 @@
+.user-label{
+    font-size: 18px;
+    font-weight: 700;
+}
+.user-campo{
+    background: none;
+    padding: 10px;
+    font-size: 15px;
+    &:focus {
+        border-color: rgb(200,200,200);
+        box-shadow: 0 0 15px 0 rgba(60, 60, 60, 0.5);
+    }
+}
+
+.material-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+  .material-radio-button {
+    margin: 5px;
+  }
+
+  .btn-back{
+    background-color: none;
+    padding: 0;
+    i{
+      color: rgb(180, 180, 180);
+      font-size: 30px !important;
+      transition: all 0.3s ease-out;
+    }
+    &:focus {
+      border-color: white !important;
+      box-shadow: none !important;
+    }
+    &:hover{
+      i{
+        color: rgb(100, 100, 100);
+      }
+    }
+  }

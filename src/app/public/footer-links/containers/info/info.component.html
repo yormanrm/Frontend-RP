@@ -1,0 +1,60 @@
+<section class="container-lg p-custom">
+  <div class="row">
+    <div class="col-lg-4 col-12 mb-5 mb-lg-0 d-none d-lg-block">
+      <ul class="nav nav-pills nav-desktop menu d-flex d-sm-block justify-content-center flex-wrap" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="pill" [routerLink]="['/info/aboutus']" [routerLinkActive]="'active'"><i class="fas fa-address-card me-4"></i><span>Nosotros</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="pill" [routerLink]="['/info/associates']" [routerLinkActive]="'active'"><i class="fas fa-users me-4"></i><span>Asociados</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="pill" [routerLink]="['/info/faqs']" [routerLinkActive]="'active'"><i class="fas fa-question-circle me-4"></i><span>FAQs</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="pill" [routerLink]="['/info/termsconditions']" [routerLinkActive]="'active'"><i class="fas fa-file-alt me-4"></i><span>Terminos & Condiciones</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="pill" [routerLink]="['/info/privacity']" [routerLinkActive]="'active'"><i class="bi bi-shield-fill-check me-4"></i><span>Politicas De Privacidad</span></a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="col-auto mx-0 px-0 align-self-start d-block d-lg-none">
+      <button class="btn btn-mobile-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLinks">
+        <i class="bi bi-arrow-bar-right"></i>
+      </button>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLinks">
+      <div class="offcanvas-header d-flex justify-content-end">
+        <button type="button" class="btn-close text-reset text-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column nav-mobile nav-pills" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" data-bs-toggle="pill" [routerLink]="['/info/aboutus']" [routerLinkActive]="'active'"><i class="fas fa-address-card me-4"></i><span>Nosotros</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" data-bs-toggle="pill" [routerLink]="['/info/associates']" [routerLinkActive]="'active'"><i class="fas fa-users me-4"></i><span>Asociados</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" data-bs-toggle="pill" [routerLink]="['/info/faqs']" [routerLinkActive]="'active'"><i class="fas fa-question-circle me-4"></i><span>FAQs</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" data-bs-toggle="pill" [routerLink]="['/info/termsconditions']" [routerLinkActive]="'active'"><i class="fas fa-file-alt me-4"></i><span>Terminos & Condiciones</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" data-bs-toggle="pill" [routerLink]="['/info/privacity']" [routerLinkActive]="'active'"><i class="bi bi-shield-fill-check me-4"></i><span>Politicas De Privacidad</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="col-lg-8 col-auto">
+      <div class="px-3 px-md-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+
